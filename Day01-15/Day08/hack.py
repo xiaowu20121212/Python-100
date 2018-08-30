@@ -8,7 +8,7 @@ Date: 2018-03-08
 
 """
 
-
+import collections
 def bar(self, name):
 	self._name = name
 
@@ -18,6 +18,9 @@ def foo(self, course_name):
 
 
 def main():
+	Employee = collections.namedtuple('Employee', ['name', 'id'])
+	employee = Employee("xiaowu","id")
+	print(employee)
 	Student = type('Student', (object,), dict(__init__=bar, study=foo))
 	stu1 = Student('骆昊')
 	stu1.study('Python程序设计')
